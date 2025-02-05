@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  signing:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+      - redis
+    environment:
+      - SECRET_KEY=supersecret
+      - JWT_SECRET_KEY=jwtsecret
+      - SQLALCHEMY_DATABASE_URI=postgresql://user:password@db/signing
+      - REDIS_URL=redis://redis:6379/0
+
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: signing
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
