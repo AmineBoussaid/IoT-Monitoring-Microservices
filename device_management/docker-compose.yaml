@@ -1,0 +1,38 @@
+services:
+  device_management:
+    build: .
+    ports:
+      - "9090:5002"
+    environment:
+      - DATABASE_URI=postgresql://admin:1234@db/db_ms
+      - RABBITMQ_URL=amqp://guest:guest@rabbitmq/
+    depends_on:
+      - db
+      - rabbitmq
+    volumes:
+      - .:/app
+    networks:
+      - shared_net
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: db_ms
+    ports:
+      - "5432:5432"
+    networks:
+      - shared_net
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5673:5672"
+      - "15673:15672"
+    networks:
+      - shared_net
+
+networks:
+  shared_net:
+    external: true
