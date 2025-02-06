@@ -1,0 +1,136 @@
+[
+  {
+    "id": 1,
+    "name": "Temperature Sensor 1",
+    "description": "Captures temperature readings",
+    "status": "active",
+    "type": "sensor",
+    "location": "Salle A",
+    "measurement_value": 22.5,
+    "unit": "Celsius",
+    "created_at": "2024-02-06T10:00:00",
+    "updated_at": "2024-02-06T12:00:00",
+    "last_reading": "2024-02-06T12:00:00",
+    "history": [
+      { "timestamp": "2024-02-06T10:00:00", "value": 21.8, "humidity": 20, "pressure": 1012 },
+      { "timestamp": "2024-02-06T11:00:00", "value": 22.1, "humidity": 57, "pressure": 1013 },
+      { "timestamp": "2024-02-06T12:00:00", "value": 22.5, "humidity": 300, "pressure": 1013.25 }
+    ]
+  },
+  
+  {
+    "id": 2,
+    "name": "Humidity Sensor 2",
+    "description": "Measures humidity levels",
+    "status": "inactive",
+    "type": "sensor",
+    "location": "Salle B",
+    "measurement_value": 60,
+    "unit": "Percentage",
+    "configuration": {
+      "threshold": 70,
+      "unit": "Percentage"
+    },
+    "created_at": "2024-02-06T10:00:00",
+    "updated_at": "2024-02-06T12:00:00",
+    "last_reading": "2024-02-06T12:00:00",
+    "history": [
+      { "timestamp": "2024-02-06T10:00:00", "value": 59 },
+      { "timestamp": "2024-02-06T11:00:00", "value": 60 },
+      { "timestamp": "2024-02-06T12:00:00", "value": 60 }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Pressure Sensor 3",
+    "description": "Measures atmospheric pressure",
+    "status": "active",
+    "type": "sensor",
+    "location": "Salle C",
+    "measurement_value": 1013.25,
+    "unit": "hPa",
+    "configuration": {
+      "threshold": 1020,
+      "unit": "hPa"
+    },
+    "created_at": "2024-02-06T10:00:00",
+    "updated_at": "2024-02-06T12:00:00",
+    "last_reading": "2024-02-06T12:00:00",
+    "history": [
+      { "timestamp": "2024-02-06T10:00:00", "value": 1012.1 },
+      { "timestamp": "2024-02-06T11:00:00", "value": 1013.0 },
+      { "timestamp": "2024-02-06T12:00:00", "value": 1013.25 }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Temperature Sensor 4",
+    "description": "Captures temperature readings",
+    "status": "active",
+    "type": "sensor",
+    "location": "Salle A",
+    "measurement_value": 22.7,
+    "unit": "Celsius",
+    "created_at": "2024-02-06T14:00:00",
+    "updated_at": "2024-02-06T14:15:00",
+    "last_reading": "2024-02-06T14:15:00",
+    "history": [
+      { "timestamp": "2024-02-06T14:00:00", "value": 22.5 },
+      { "timestamp": "2024-02-06T14:05:00", "value": 22.6 },
+      { "timestamp": "2024-02-06T14:10:00", "value": 22.7 }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Humidity Sensor 5",
+    "description": "Measures humidity levels",
+    "status": "active",
+    "type": "sensor",
+    "location": "Salle B",
+    "measurement_value": 58,
+    "unit": "Percentage",
+    "created_at": "2024-02-06T14:00:00",
+    "updated_at": "2024-02-06T14:15:00",
+    "last_reading": "2024-02-06T14:15:00",
+    "history": [
+      { "timestamp": "2024-02-06T14:00:00", "value": 57 },
+      { "timestamp": "2024-02-06T14:05:00", "value": 58 },
+      { "timestamp": "2024-02-06T14:10:00", "value": 59 }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Pressure Sensor 6",
+    "description": "Measures atmospheric pressure",
+    "status": "inactive",
+    "type": "sensor",
+    "location": "Salle C",
+    "measurement_value": 1013.15,
+    "unit": "hPa",
+    "created_at": "2024-02-06T14:00:00",
+    "updated_at": "2024-02-06T14:15:00",
+    "last_reading": "2024-02-06T14:15:00",
+    "history": [
+      { "timestamp": "2024-02-06T14:00:00", "value": 1012.9 },
+      { "timestamp": "2024-02-06T14:05:00", "value": 1013.1 },
+      { "timestamp": "2024-02-06T14:10:00", "value": 1013.15 }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Temperature Sensor 7",
+    "description": "Captures temperature readings",
+    "status": "active",
+    "type": "sensor",
+    "location": "Salle A",
+    "measurement_value": 23.0,
+    "unit": "Celsius",
+    "created_at": "2024-02-06T15:00:00",
+    "updated_at": "2024-02-06T15:15:00",
+    "last_reading": "2024-02-06T15:15:00",
+    "history": [
+      { "timestamp": "2024-02-06T15:00:00", "value": 22.9 },
+      { "timestamp": "2024-02-06T15:05:00", "value": 23.0 }
+    ]
+  }
+]
