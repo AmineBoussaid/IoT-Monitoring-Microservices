@@ -1,43 +1,79 @@
 # IoT Monitoring Microservices
 
-## Description
-Plateforme de monitoring IoT basée sur une architecture de microservices. Ce projet permet de collecter, gérer et visualiser les données des appareils IoT en temps réel. Il utilise des technologies modernes comme Flask, RabbitMQ, Kubernetes, MongoDB, et Docker pour une solution évolutive et performante.
+A cloud-native IoT monitoring platform built with a scalable microservices architecture.  
+It collects device telemetry, processes events asynchronously, and provides real-time monitoring for connected systems.
 
-## Fonctionnalités principales
-- **Authentication et gestion des utilisateurs** : Utilisation de JWT pour sécuriser les accès.
-- **Gestion des appareils IoT** : Enregistrement, configuration et suivi des appareils.
-- **Monitoring en temps réel** : Collecte des données IoT et mise à jour en direct via Socket.IO.
-- **Communication entre services** : Utilisation de RabbitMQ pour un flux de données asynchrone.
+## Key Features
 
-## Architecture
-Le projet est divisé en trois microservices :
+- **Microservices architecture** with clear service boundaries
+- **Secure authentication** using JWT
+- **Asynchronous messaging** via RabbitMQ for reliable inter-service communication
+- **Real-time monitoring** powered by Socket.IO
+- **Containerized deployment** with Docker and Kubernetes-ready setup
+- **Multi-database strategy** (PostgreSQL, MongoDB, Redis) based on service needs
 
-1. **Signing Microservice**
-   - Gestion des utilisateurs (inscription, connexion).
-   - Base de données : PostgreSQL.
-   - Cache des sessions : Redis.
+## Architecture Overview
 
-2. **Device Management Microservice**
-   - Gestion des appareils IoT (ajout, suppression, configuration).
-   - Base de données : PostgreSQL.
-   - Publication des événements via RabbitMQ.
+The platform is split into three independent services:
 
-3. **Monitoring Microservice**
-   - Réception des données des appareils via RabbitMQ.
-   - Stockage des données dans MongoDB.
-   - Envoi de mises à jour en temps réel aux clients via Socket.IO.
+- **Signing Service**  
+  Handles user management and authentication.
 
-## Technologies utilisées
-- **Backend** : Flask
-- **Bases de données** : PostgreSQL, MongoDB, Redis
-- **Communication** : RabbitMQ, HTTP REST, Socket.IO
-- **Orchestration** : Kubernetes (microk8s)
-- **Containerisation** : Docker
+- **Device Management Service**  
+  Manages IoT devices, configurations, and lifecycle operations.
 
-## Installation
-*(À compléter avec les instructions spécifiques si nécessaire)*
+- **Monitoring Service**  
+  Ingests telemetry, stores data, and streams real-time updates.
 
-## Simulation des données IoT
-- Utilisez des scripts Python pour simuler des appareils IoT envoyant des données via MQTT.
+**Communication flow:**  
+IoT events → RabbitMQ → Monitoring consumers → Storage + live updates to clients.
 
----
+## Tech Stack
+
+### Backend
+- Python
+- Flask
+- Flask-SocketIO
+- Flask-JWT-Extended
+
+### Data & Messaging
+- PostgreSQL
+- MongoDB
+- Redis
+- RabbitMQ
+
+### Realtime & IoT
+- Socket.IO
+- MQTT
+
+### DevOps
+- Docker
+- Kubernetes (microk8s)
+
+## How to Run
+
+### Prerequisites
+- Docker & Docker Compose
+- (Optional) Kubernetes / microk8s
+
+### Quick Start (Docker)
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/AmineBoussaid/IoT-Monitoring-Microservices.git
+   cd IoT-Monitoring-Microservices
+   ```
+
+2. Start the platform:
+   ```bash
+   docker compose up --build
+   ```
+
+3. Access services using the configured ports in your compose/environment files.
+
+## Future Improvements
+
+- Add centralized observability (Prometheus + Grafana)
+- Introduce API Gateway and service discovery
+- Implement CI/CD pipelines with automated tests and deployments
+- Add role-based access control and audit logging
